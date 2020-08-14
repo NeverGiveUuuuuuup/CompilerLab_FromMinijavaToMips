@@ -1,0 +1,18 @@
+http://compilers.cs.ucla.edu/cs132/setup.html
+
+Quick How-to to compile a minijava to piglet compiler
+% java -jar jtb.jar minijava.jj  # generates jtb.out.jj
+
+% javacc jtb.out.jj              # generates a parser with a specified name
+
+# now code the visitors to compile java to piglet.
+
+% javac Main.java                # Main.java contains a call of the parser, and visitors
+                                 # you need to download this file or create your own in your 
+                                 # working directory. (You might get some warnings about 
+                                 # unchecked calls which you can ignore.)
+
+% java Main < p.java > p.pg      # builds a syntax tree for p.java, and  executes 
+                                 # the visitors, output a piglet program
+
+% java -jar pgi.jar < p.pg       # run the piglet program. 

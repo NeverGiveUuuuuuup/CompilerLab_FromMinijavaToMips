@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<!-- saved from url=(0054)http://compilers.cs.ucla.edu/cs132/project/piglet.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>BNF for piglet.jj</title>
+</head>
+<body>
+<h1 align="CENTER">BNF for piglet.jj</h1>
+<h2 align="CENTER">NON-TERMINALS</h2>
+<table>
+<tbody><tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod1">Goal</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"MAIN" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod2">StmtList</a> "END" ( <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod3">Procedure</a> )* &lt;EOF&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod2">StmtList</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">( ( <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod4">Label</a> )? <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod5">Stmt</a> )*</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod3">Procedure</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod4">Label</a> "[" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod6">IntegerLiteral</a> "]" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod7">StmtExp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod5">Stmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod8">NoOpStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod9">ErrorStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod10">CJumpStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod11">JumpStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod12">HStoreStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod13">HLoadStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod14">MoveStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod15">PrintStmt</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod8">NoOpStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"NOOP"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod9">ErrorStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"ERROR"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod10">CJumpStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"CJUMP" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod4">Label</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod11">JumpStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"JUMP" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod4">Label</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod12">HStoreStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"HSTORE" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod6">IntegerLiteral</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod13">HLoadStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"HLOAD" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod17">Temp</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod6">IntegerLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod14">MoveStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"MOVE" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod17">Temp</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod15">PrintStmt</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"PRINT" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod16">Exp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod7">StmtExp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod18">Call</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod19">HAllocate</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod20">BinOp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod17">Temp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod6">IntegerLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod4">Label</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod7">StmtExp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"BEGIN" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod2">StmtList</a> "RETURN" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a> "END"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod18">Call</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"CALL" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a> "(" ( <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a> )* ")"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod19">HAllocate</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"HALLOCATE" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod20">BinOp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE"><a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod21">Operator</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a> <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod16">Exp</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod21">Operator</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"LT"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"PLUS"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"MINUS"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"></td>
+<td align="CENTER" valign="BASELINE">|</td>
+<td align="LEFT" valign="BASELINE">"TIMES"</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod17">Temp</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">"TEMP" <a href="http://compilers.cs.ucla.edu/cs132/project/piglet.html#prod6">IntegerLiteral</a></td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod6">IntegerLiteral</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;INTEGER_LITERAL&gt;</td>
+</tr>
+<tr>
+<td align="RIGHT" valign="BASELINE"><a name="prod4">Label</a></td>
+<td align="CENTER" valign="BASELINE">::=</td>
+<td align="LEFT" valign="BASELINE">&lt;IDENTIFIER&gt;</td>
+</tr>
+</tbody></table>
+
+
+</body></html>
